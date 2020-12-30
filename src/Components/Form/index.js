@@ -4,10 +4,11 @@ import './style.css';
 const Form = () => {
     
     return (
-        <div className="barra-pesquisa">
-{            <input type="text"></input>
-}        </div>
+        <div className="search-bar">
+{           <input type="text" id="pesquisa" placeholder="Código de rastreio"></input>
+}       </div>
     )
 }
 
 export default Header;
+
