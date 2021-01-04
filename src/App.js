@@ -15,20 +15,8 @@ function App() {
       <Header />
       <Form/>
       <Footer/> 
-      {/* <Form /> */}
     </div>
   );
 }
-
-/* class App extends Component {
-  state = {
-    trackData: []
-  }
-  componentDidMount(){
-
-    
-    }
-    
-} */
 
 export default App;
