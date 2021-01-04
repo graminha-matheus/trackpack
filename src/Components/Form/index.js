@@ -13,7 +13,7 @@ const {data, setData} = useState([])
       setData(data)
     })
     /* Faz os resultados aparecerem no console caso dê erro (Else) */
-    .catch(console.log('Erro!'))
+    .catch(console.log('Erro.'))
     console.log(data)
 
     return (
