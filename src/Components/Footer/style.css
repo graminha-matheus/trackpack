@@ -1,7 +1,5 @@
 .img-logo img{
-    height: 10
-    rem;
-    width: 10rem;;
-    margin-top: 3rem;
-    text-align: center;
+    width: 150px;
+    height: auto;
+    padding-right: 2rem;
 }

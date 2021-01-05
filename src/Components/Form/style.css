@@ -1,0 +1,41 @@
+div .search_bar { 
+    display: flex;
+    width: 230px;
+
+    justify-content: center;
+    align-items: center;
+    margin-top: 18px;
+}
+
+div .search_bar input{
+    height: 40px;
+    font-size: 18px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #1179A0;
+    border-radius: 15px 0 0 15px;
+}
+
+div .search_bar button {
+    width: 50px;
+    height: 40px;
+
+    border: 1px solid #1179A0;
+    background-color: #1179A0;
+    color: white;
+    border-radius: 0 15px 15px 0;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+div .search_bar button:hover {
+    background-color: rgb(19, 150, 226);
+}
+
+div .search_bar input {
+    text-transform: uppercase;
+}
+
+::placeholder {
+    text-transform: lowercase;
+}

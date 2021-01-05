@@ -6,7 +6,7 @@ import './style.css'
 const Footer = () => {
     return (
         <div className="img-logo">
-            <img src={footer}></img>
+            <img src={footer} alt="BCR"></img>
         </div>
     )
 }
