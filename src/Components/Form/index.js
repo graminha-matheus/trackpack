@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './style.css';
+import {FaSearch} from 'react-icons/fa';
 
 const Form = () => {
 const [end, setEnd] = useState([]);
@@ -16,8 +17,8 @@ const [error, setError] = useState(false);
     const handlerSubmit = async event => {
         event.preventDefault();
             /* Puxa a API do codigo de rastreio */
-            fetch(`https://api.postmon.com.br/v1/rastreio/ect/${search}`)
-            
+            fetch(`https://api.linketrack.com/track/json?user=teste&token=1abcd00b2731640e886fb41a8a9671ad1434c599dbaa0a0de9a5aa619f29a83f&codigo=${search}`)
+
             /* Passa os resultados para JSON */
             .then(trackResult => trackResult.json())
             
@@ -30,11 +31,8 @@ const [error, setError] = useState(false);
 
             }).catch(err => {
                 setError(true)
-                console.log(error) 
+                console.log('Erro!') 
             })
-            
-            /* Faz os resultados aparecerem no console caso dê erro (Else) */
-            .catch(console.log('Erro.'))
 
     }
 
@@ -55,6 +53,8 @@ const [error, setError] = useState(false);
                 type="submit" 
                 onClick={handlerSubmit}
             > 
+            {<FaSearch size="20"></FaSearch>}
+            
             </button>
 
             </form>
