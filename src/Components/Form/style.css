@@ -31,3 +31,11 @@ div .search_bar button {
 div .search_bar button:hover {
     background-color: rgb(19, 150, 226);
 }
+
+div .search_bar input {
+    text-transform: uppercase;
+}
+
+::placeholder {
+    text-transform: lowercase;
+}

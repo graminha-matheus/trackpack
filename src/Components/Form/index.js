@@ -43,9 +43,10 @@ const [error, setError] = useState(false);
             <input 
                 type="text" 
                 id="pesquisa" 
-                placeholder="Código de rastreio"
+                placeholder="código de rastreio"
                 value = {search}
                 onChange = {onChangeHandler}
+                styles="text-transform:uppercase" 
                 >   
             </input>
 
