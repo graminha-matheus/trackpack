@@ -60,6 +60,12 @@ const [error, setError] = useState(false);
 
             </form>
 
+            <div className="div-span">
+                <span className={error === false ? 'dontshow' : 'show'}>
+                Código de rastreio inválido. 
+                </span>
+            </div>
+
        </div>
     )
 }
