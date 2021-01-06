@@ -39,3 +39,15 @@ div .search_bar input {
 ::placeholder {
     text-transform: lowercase;
 }
+
+div .show {
+    color: red;
+    font-weight: bold;
+
+    margin: 0 auto;
+}
+
+div .dontshow {
+    overflow: hidden;
+    display: none;
+}
