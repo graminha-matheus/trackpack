@@ -51,3 +51,13 @@ div .dontshow {
     overflow: hidden;
     display: none;
 }
+
+
+div .show_info {
+    margin: 0 auto;
+}
+
+div .dontshow_info {
+    overflow: hidden;
+    display: none;
+}

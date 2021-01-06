@@ -23,7 +23,7 @@ const [hasit, setHasLoaded] = useState(false);
             fetch(`https://api.linketrack.com/track/json?user=matheus.g.moreli@gmail.com&token=39fed9f9a76882a1a1cba109fd62dfaacdf426066b6b9166cad6f0ad00c9f52c&codigo=${search}`)
 
             /* Passa os resultados para JSON */
-            .then(trackResult => JSON.parse(trackResult))
+            .then(trackResult => trackResult.json())
             
             /* Joga os resultados para o setData*/
             .then(data => {
@@ -31,10 +31,11 @@ const [hasit, setHasLoaded] = useState(false);
                 /* Define que o valor final vem de Data e que não houve erros. */
                 setEnd(data)
                 setHasLoaded(true)
-
-                console.log(data)
+                
                 setError(false)
                 setTrack(false)
+
+                console.log(data)
 
             }).catch(err => {
                 setError(true)
@@ -74,17 +75,36 @@ const [hasit, setHasLoaded] = useState(false);
                     </span>
                 </div>
 
-                <div >
-                    <span className = "codeTrack">
-                        {end.codigo}
+                {/* Renderizando dados no Front-End. */}
+                <br />
+                {/* -- */}
+                <div>
+                    <span className = {hasit === true ? 'show_info' : 'dontshow_info'}>
+                       <h4> Código de rastreio: </h4> {end.codigo}
                     </span> 
                 </div>
-
-                <div >
-                    <span className = "codeLocal">
-                        {hasit === true ? end.eventos[0].local : null}
+                {/* -- */}
+                <br />
+                {/* -- */}
+                <div>
+                    <span className = {hasit === true ? 'show_info' : 'dontshow_info'}>
+                        <h4> Status atual do pedido: </h4>
+                        {hasit === true ? end.eventos[0].status : null}<br />
                     </span> 
+                    
+                    
+                    {hasit === true ? end.eventos.forEach(item => { 
+                   
+                    <tr>
+                        <td>
+                        {item.local}
+                        </td>
+                    </tr>
+                    
+                }) : null }
                 </div>
+                
+                
 
             </div>
     )
