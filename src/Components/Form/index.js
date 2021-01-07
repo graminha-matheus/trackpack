@@ -52,7 +52,7 @@ const [showtd, setTable] = useState(false)
             <div>
                 <form className="search_bar">
 
-                    <input 
+                    <input className = {hasit === false ? 'show_info' : 'dontshow_info'}
                         type="text" 
                         id="pesquisa" 
                         placeholder="código de rastreio"
@@ -62,7 +62,7 @@ const [showtd, setTable] = useState(false)
                         >   
                     </input>
 
-                    <button 
+                    <button className = {hasit === false ? 'show_info' : 'dontshow_info'}
                         type="submit" 
                         onClick={handlerSubmit}
                     > 
@@ -109,7 +109,7 @@ const [showtd, setTable] = useState(false)
                         {console.log(hasit)}
                             
                         return (
-                        <table>
+                        <table className="table-data">
                             <tr>
                                 <br /> 
                                 <td>
