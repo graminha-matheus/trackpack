@@ -9,6 +9,7 @@ const [search, setSearch] = useState([]);
 const [error, setError] = useState(false);
 const [showTrack, setTrack] = useState(true);
 const [hasit, setHasLoaded] = useState(false);
+const bilu = "Bilu"
 
     const onChangeHandler = event => {
         setSearch(event.target.value)
@@ -80,7 +81,8 @@ const [hasit, setHasLoaded] = useState(false);
                 {/* -- */}
                 <div>
                     <span className = {hasit === true ? 'show_info' : 'dontshow_info'}>
-                       <h4> Código de rastreio: </h4> {end.codigo}
+                       <h4> Código de rastreio: </h4> 
+                       {end.codigo}
                     </span> 
                 </div>
                 {/* -- */}
@@ -89,23 +91,25 @@ const [hasit, setHasLoaded] = useState(false);
                 <div>
                     <span className = {hasit === true ? 'show_info' : 'dontshow_info'}>
                         <h4> Status atual do pedido: </h4>
-                        {hasit === true ? end.eventos[0].status : null}<br />
+                        {hasit === true ? end.eventos[0].status : error}<br />
                     </span> 
-                    
+
+                    <br />  
+
+                    <span className = {hasit === true ? 'show_info' : 'dontshow_info'}>
+                         <h4>
+                            Histórico: 
+                         </h4>
+                    </span>
                     
                     {hasit === true ? end.eventos.forEach(item => { 
-                   
-                    <tr>
-                        <td>
-                        {item.local}
-                        </td>
-                    </tr>
-                    
-                }) : null }
+                            
+                        <span> {item.data} </span>
+
+                        }) : error }
+
                 </div>
                 
-                
-
             </div>
     )
     }
