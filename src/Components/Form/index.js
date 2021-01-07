@@ -7,9 +7,9 @@ const Form = () => {
 const [end, setEnd] = useState([]);
 const [search, setSearch] = useState([]);
 const [error, setError] = useState(false);
-const [showTrack, setTrack] = useState(true);
+const [strack, setTrack] = useState(true);
 const [hasit, setHasLoaded] = useState(false);
-const bilu = "Bilu"
+const [showtd, setTable] = useState(false)
 
     const onChangeHandler = event => {
         setSearch(event.target.value)
@@ -35,6 +35,8 @@ const bilu = "Bilu"
                 
                 setError(false)
                 setTrack(false)
+
+                setTable(true)
 
                 console.log(data)
 
@@ -89,6 +91,7 @@ const bilu = "Bilu"
                 <br />
                 {/* -- */}
                 <div>
+
                     <span className = {hasit === true ? 'show_info' : 'dontshow_info'}>
                         <h4> Status atual do pedido: </h4>
                         {hasit === true ? end.eventos[0].status : error}<br />
@@ -101,10 +104,22 @@ const bilu = "Bilu"
                             Histórico: 
                          </h4>
                     </span>
-                    
-                    {hasit === true ? end.eventos.forEach(item => { 
+
+                    {hasit === true ? end.eventos.map(item => { 
+                        {console.log(hasit)}
                             
-                        <span> {item.data} </span>
+                        return (
+                        <table>
+                            <tr>
+                                <br /> 
+                                <td>
+                                {item.data} <br />  {item.hora} <br />  {item.local}
+                                <br /> 
+                                {item.status} <br /> <span> {item.subStatus[0]} <br /> {item.subStatus[1]} </span> <br /> 
+                                <br /> 
+                                </td>
+                            </tr>
+                        </table>);
 
                         }) : error }
 
