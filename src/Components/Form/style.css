@@ -94,11 +94,11 @@ div button:hover {
     justify-content: space-between;
 } 
 
-.table { 
+table { 
     overflow-y: auto; 
     height: 100px; }
     
-.table th { 
+table th { 
     position: sticky; 
     top: 0; 
    }

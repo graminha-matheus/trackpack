@@ -117,7 +117,7 @@ const [hasit, setHasLoaded] = useState(false);
                          </h4>
                     </span>
 
-                    <table className="table">
+                    <table className={hasit === true ? 'show_info' : 'dontshow_info'}>
                         
                         <thead>
                         <tr bgcolor="black">
