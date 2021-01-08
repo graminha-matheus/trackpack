@@ -117,27 +117,42 @@ const [hasit, setHasLoaded] = useState(false);
                          </h4>
                     </span>
 
+                    <table className="table">
+                        
+                        <thead>
+                        <tr bgcolor="black">
+                                <th>Data</th>
+                                <th>Local</th>
+                                <th>Hora</th>
+                                <th>Status</th>
+                                <th>Origem e Destino</th>
+                                
+                            </tr>    
+                            </thead>
+
                     {hasit === true ? end.eventos.map(item => { 
                         {console.log(hasit)}
                             
                         return (
-                            
-                        <table className="table-data">
-                            <tr>
-                                <br /> 
-                                <td>
-                                {item.data} <br />  {item.hora} <br />  {item.local}
-                                <br /> 
-                                {item.status} <br /> <span> {item.subStatus[0]} <br /> {item.subStatus[1]} </span> <br /> 
-                                <br /> 
-                                </td>
+
+                            <tbody>
+                            <tr className="info">
+                                <td>{item.data}</td>
+                                <td>{item.local}</td>
+                                <td>{item.hora}</td>
+                                <td>{item.status}</td>
+                                <td>{item.subStatus[0]} <br /> {item.subStatus[1]}</td>
                             </tr>
-                        </table>);
+                            </tbody>
+
+                        )
 
                         }) : error }
 
+                        </table>
+
                 </div>
-                
+                <br /> <br /> <br />
                 <div className="btn">
                     <button className = {hasit === true ? 'show_info' : 'dontshow_info'}
                             type="submit" 

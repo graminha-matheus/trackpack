@@ -94,4 +94,24 @@ div button:hover {
     justify-content: space-between;
 } 
 
-     
+.table { 
+    overflow-y: auto; 
+    height: 100px; }
+    
+.table th { 
+    position: sticky; 
+    top: 0; 
+   }
+
+table  { 
+    border-collapse: collapse; 
+    width: 100%; 
+   }
+
+th,td {  
+    padding: 2px 2px 2px 2px;   
+   }
+
+th { 
+    background: rgb(19, 150, 226); 
+   }
