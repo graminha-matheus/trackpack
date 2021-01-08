@@ -2,14 +2,14 @@ import React, {useState} from 'react';
 import './style.css';
 import {FaSearch} from 'react-icons/fa';
 import { render } from '@testing-library/react';
+import {AiOutlineRedo} from 'react-icons/ai';
+import {AiOutlinePlus} from 'react-icons/ai';
 
 const Form = () => {
 const [end, setEnd] = useState([]);
 const [search, setSearch] = useState([]);
 const [error, setError] = useState(false);
-const [strack, setTrack] = useState(true);
 const [hasit, setHasLoaded] = useState(false);
-const [showtd, setTable] = useState(false)
 
     const onChangeHandler = event => {
         setSearch(event.target.value)
@@ -32,11 +32,7 @@ const [showtd, setTable] = useState(false)
                 /* Define que o valor final vem de Data e que não houve erros. */
                 setEnd(data)
                 setHasLoaded(true)
-                
                 setError(false)
-                setTrack(false)
-
-                setTable(true)
 
                 console.log(data)
 
@@ -77,25 +73,41 @@ const [showtd, setTable] = useState(false)
                     Código de rastreio inválido. 
                     </span>
                 </div>
-
+                
                 {/* Renderizando dados no Front-End. */}
                 <br />
                 {/* -- */}
                 <div>
-                    <span className = {hasit === true ? 'show_info' : 'dontshow_info'}>
-                       <h4> Código de rastreio: </h4> 
-                       {end.codigo}
-                    </span> 
+                    
+                    <h4 className = {hasit === true ? 'show_info' : 'dontshow_info'}> 
+                    Código de rastreio: 
+                    </h4>
+
+                    <input 
+                    value={end.codigo} 
+                    className = {hasit === true ? 'show_info' : 'dontshow_info'} 
+                    disabled
+                    >
+
+                    </input> 
+                    
                 </div>
                 {/* -- */}
                 <br />
                 {/* -- */}
                 <div>
 
-                    <span className = {hasit === true ? 'show_info' : 'dontshow_info'}>
-                        <h4> Status atual do pedido: </h4>
-                        {hasit === true ? end.eventos[0].status : error}<br />
-                    </span> 
+                    <h4 className = {hasit === true ? 'show_info' : 'dontshow_info'}>  
+                    Status atual do pedido: 
+                    </h4> 
+
+                    <input 
+                    value={hasit === true ? end.eventos[0].status : error} 
+                    className = {hasit === true ? 'show_info' : 'dontshow_info'} 
+                    disabled
+                    >
+
+                    </input>
 
                     <br />  
 
@@ -109,6 +121,7 @@ const [showtd, setTable] = useState(false)
                         {console.log(hasit)}
                             
                         return (
+                            
                         <table className="table-data">
                             <tr>
                                 <br /> 
@@ -125,6 +138,26 @@ const [showtd, setTable] = useState(false)
 
                 </div>
                 
+                <div className="btn">
+                    <button className = {hasit === true ? 'show_info' : 'dontshow_info'}
+                            type="submit" 
+                            onClick={handlerSubmit}
+                            alt="Nova Consulta"
+                        > 
+                        <AiOutlineRedo size="60"></AiOutlineRedo>
+                        
+                    </button>
+                    
+                    <button className = {hasit === true ? 'show_info' : 'dontshow_info'}
+                            type="submit" 
+                            onClick={handlerSubmit}
+                            alt="Aplicar no Ticket"
+                        > 
+                        <AiOutlinePlus size="60"></AiOutlinePlus>
+                        
+                    </button>
+                </div>
+
             </div>
     )
     }
