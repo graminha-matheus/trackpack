@@ -1,5 +1,10 @@
+.img-log {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .img-logo img{
-    width: 150px;
+    width: 4rem;
     height: auto;
-    padding-right: 2rem;
 }
