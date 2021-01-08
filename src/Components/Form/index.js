@@ -46,132 +46,151 @@ const [hasit, setHasLoaded] = useState(false);
     
         return (
             <div>
-                <form className="search_bar">
+                <div className="form-container">
+                    <form className="search_bar">
+                        <input className = {hasit === false ? 'show_info' : 'dontshow_info'}
+                            type="text" 
+                            id="pesquisa" 
+                            placeholder="código de rastreio"
+                            value = {search}
+                            onChange = {onChangeHandler}
+                            styles="text-transform:uppercase" 
+                            >   
+                        </input>
 
-                    <input className = {hasit === false ? 'show_info' : 'dontshow_info'}
-                        type="text" 
-                        id="pesquisa" 
-                        placeholder="código de rastreio"
-                        value = {search}
-                        onChange = {onChangeHandler}
-                        styles="text-transform:uppercase" 
-                        >   
-                    </input>
-
-                    <button className = {hasit === false ? 'show_info' : 'dontshow_info'}
-                        type="submit" 
-                        onClick={handlerSubmit}
-                    > 
-                    <FaSearch size="20"></FaSearch>
-                    
-                    </button>
-
-                </form>
+                        <button className = {hasit === false ? 'show_info' : 'dontshow_info'}
+                            type="submit" 
+                            onClick={handlerSubmit}
+                        > 
+                        <FaSearch size="20"></FaSearch>
+                        </button>
+                    </form>
+                </div>
 
                 <div className="div-span">
                     <span className={error === false ? 'dontshow' : 'show'}>
                     Código de rastreio inválido. 
                     </span>
                 </div>
-                
+
                 {/* Renderizando dados no Front-End. */}
                 <br />
                 {/* -- */}
-                <div>
-                    
-                    <h4 className = {hasit === true ? 'show_info' : 'dontshow_info'}> 
-                    Código de rastreio: 
-                    </h4>
 
-                    <input 
-                    value={end.codigo} 
-                    className = {hasit === true ? 'show_info' : 'dontshow_info'} 
-                    disabled
-                    >
 
-                    </input> 
-                    
-                </div>
-                {/* -- */}
-                <br />
-                {/* -- */}
-                <div>
 
-                    <h4 className = {hasit === true ? 'show_info' : 'dontshow_info'}>  
-                    Status atual do pedido: 
-                    </h4> 
 
-                    <input 
-                    value={hasit === true ? end.eventos[0].status : error} 
-                    className = {hasit === true ? 'show_info' : 'dontshow_info'} 
-                    disabled
-                    >
 
-                    </input>
 
-                    <br />  
 
-                    <span className = {hasit === true ? 'show_info' : 'dontshow_info'}>
-                         <h4>
-                            Histórico: 
-                         </h4>
-                    </span>
 
-                    <table className={hasit === true ? 'show_info' : 'dontshow_info'}>
+
+
+
+
+
+                
+                
+                <div className="return-container">
+
+                    <div>
                         
-                        <thead>
-                        <tr bgcolor="black">
-                                <th>Data</th>
-                                <th>Local</th>
-                                <th>Hora</th>
-                                <th>Status</th>
-                                <th>Origem e Destino</th>
-                                
-                            </tr>    
-                            </thead>
+                        <h4 className = {hasit === true ? 'show_info' : 'dontshow_info'}> 
+                        Código de rastreio: 
+                        </h4>
 
-                    {hasit === true ? end.eventos.map(item => { 
-                        {console.log(hasit)}
+                        <input 
+                        value={end.codigo} 
+                        className = {hasit === true ? 'show_info' : 'dontshow_info'} 
+                        disabled
+                        >
+
+                            </input> 
+                    </div>
+                    {/* -- */}
+                    <br />
+                    {/* -- */}
+                        
+                    <div>
+                        <h4 className = {hasit === true ? 'show_info' : 'dontshow_info'}>  
+                        Status atual do pedido: 
+                        </h4> 
+
+                        <input 
+                        value={hasit === true ? end.eventos[0].status : error} 
+                        className = {hasit === true ? 'show_info' : 'dontshow_info'} 
+                        disabled
+                        >
+
+                        </input>
+
+                        <br />  
+
+                        <span className = {hasit === true ? 'show_info' : 'dontshow_info'}>
+                            <h4>
+                                Histórico: 
+                            </h4>
+                        </span>
+
+                        <table className={hasit === true ? 'show_info' : 'dontshow_info'}>
                             
-                        return (
+                            <thead>
+                            <tr bgcolor="black">
+                                    <th>Data</th>
+                                    <th>Local</th>
+                                    <th>Hora</th>
+                                    <th>Status</th>
+                                    <th>Origem e Destino</th>
+                                    
+                                </tr>    
+                                </thead>
 
-                            <tbody>
-                            <tr className="info">
-                                <td>{item.data}</td>
-                                <td>{item.local}</td>
-                                <td>{item.hora}</td>
-                                <td>{item.status}</td>
-                                <td>{item.subStatus[0]} <br /> {item.subStatus[1]}</td>
-                            </tr>
-                            </tbody>
+                        {hasit === true ? end.eventos.map(item => { 
+                            {console.log(hasit)}
+                                
+                            return (
 
-                        )
+                                <tbody>
+                                <tr className="info">
+                                    <td>{item.data}</td>
+                                    <td>{item.local}</td>
+                                    <td>{item.hora}</td>
+                                    <td>{item.status}</td>
+                                    <td>{item.subStatus[0]} <br /> {item.subStatus[1]}</td>
+                                </tr>
+                                </tbody>
 
-                        }) : error }
+                            )
 
-                        </table>
+                            }) : error }
+
+                            </table>
+
+                    </div>
+                    <br /> <br /> <br />
+                    <div className="btn">
+                        <button className = {hasit === true ? 'show_info' : 'dontshow_info'}
+                                type="submit" 
+                                onClick={handlerSubmit}
+                                alt="Nova Consulta"
+                            > 
+                            <AiOutlineRedo size="60"></AiOutlineRedo>
+                            
+                        </button>
+                        
+                        <button className = {hasit === true ? 'show_info' : 'dontshow_info'}
+                                type="submit" 
+                                onClick={handlerSubmit}
+                                alt="Aplicar no Ticket"
+                            > 
+                            <AiOutlinePlus size="60"></AiOutlinePlus>
+                            
+                        </button>
+                    </div>
+
 
                 </div>
-                <br /> <br /> <br />
-                <div className="btn">
-                    <button className = {hasit === true ? 'show_info' : 'dontshow_info'}
-                            type="submit" 
-                            onClick={handlerSubmit}
-                            alt="Nova Consulta"
-                        > 
-                        <AiOutlineRedo size="60"></AiOutlineRedo>
-                        
-                    </button>
-                    
-                    <button className = {hasit === true ? 'show_info' : 'dontshow_info'}
-                            type="submit" 
-                            onClick={handlerSubmit}
-                            alt="Aplicar no Ticket"
-                        > 
-                        <AiOutlinePlus size="60"></AiOutlinePlus>
-                        
-                    </button>
-                </div>
+
 
             </div>
     )

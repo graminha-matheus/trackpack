@@ -4,13 +4,12 @@
     box-sizing: border-box;
 }
 
-.App {
-    width: 80%;
-    height: 100vh;
+.app {
+    width: 320px;
+    height: 360px;
+    position: absolute;
 
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
