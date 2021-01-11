@@ -132,10 +132,13 @@ const [hasit, setHasLoaded] = useState(false);
                             </h4>
                         </span>
 
+                        <div className="scroll">
+
                         <table className={hasit === true ? 'show_info' : 'dontshow_info'}>
+                   
                             
                             <thead>
-                            <tr bgcolor="black">
+                            <tr className="info" bgcolor="black">
                                     <th>Data</th>
                                     <th>Local</th>
                                     <th>Hora</th>
@@ -150,8 +153,10 @@ const [hasit, setHasLoaded] = useState(false);
                                 
                             return (
 
+                                
+
                                 <tbody>
-                                <tr className="info">
+                                <tr className="info1">
                                     <td>{item.data}</td>
                                     <td>{item.local}</td>
                                     <td>{item.hora}</td>
@@ -159,12 +164,14 @@ const [hasit, setHasLoaded] = useState(false);
                                     <td>{item.subStatus[0]} <br /> {item.subStatus[1]}</td>
                                 </tr>
                                 </tbody>
+                               
 
                             )
 
                             }) : error }
 
                             </table>
+                            </div>
 
                     </div>
                     <br /> <br /> <br />

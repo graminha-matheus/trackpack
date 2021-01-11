@@ -92,6 +92,9 @@ div button:hover {
 .btn {
     display: flex;
     justify-content: space-between;
+    
+
+    
 } 
 
 table { 
@@ -132,3 +135,26 @@ th {
     left: -1px;
     top: -4px;
 } */
+
+div .scroll{
+
+    height: 200px;
+    width: 660px;
+    border:solid 2px;
+    overflow: hidden;
+    overflow-y:auto;
+    position: absolute;
+  
+    
+
+}
+
+table{
+    border-collapse:collapse;
+
+}
+table td{
+
+    padding: 20px;
+
+}
