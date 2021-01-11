@@ -4,7 +4,8 @@ import {FaSearch} from 'react-icons/fa';
 import { render } from '@testing-library/react';
 import {AiOutlineRedo} from 'react-icons/ai';
 import {AiOutlinePlus} from 'react-icons/ai';
-import Logo from '../../Assets/tppt2.png'
+import Logo from '../../Assets/tppt2.png';
+import footerimg from '../../Assets/logo_footer2.png';
 
 const Form = () => {
 const [end, setEnd] = useState([]);
@@ -46,14 +47,15 @@ const [hasit, setHasLoaded] = useState(false);
     console.log(end)
     
         return (
-            <div>
+            <div className="tes">
 
                 <div className = {hasit === false ? 'show_info' : 'dontshow_info'}>
                 <img src={Logo} alt="TrackPack - by BCR"></img>
                 </div>
-
+                <br />
                 <div className="form-container">
                     <form className="search_bar">
+                        
                         <input className = {hasit === false ? 'show_info' : 'dontshow_info'}
                             type="text" 
                             id="pesquisa" 
@@ -97,7 +99,7 @@ const [hasit, setHasLoaded] = useState(false);
                         disabled
                         >
 
-                            </input> 
+                        </input> 
                     </div>
                     {/* -- */}
                     <br />
@@ -134,7 +136,7 @@ const [hasit, setHasLoaded] = useState(false);
 
                                 <tbody>
                                 <tr className="info1">
-                                    <td>{item.data}, às {item.hora}, em {item.local}:<br /> 
+                                    <td>{item.data}, às {item.hora} <br /> Em {item.local}<br /> 
                                     {item.status}. <br /> 
                                     {item.subStatus[1]}</td>
                                 </tr>
@@ -169,8 +171,9 @@ const [hasit, setHasLoaded] = useState(false);
                         </button>
                     </div>
 
-
                 </div>
+
+                
 
 
             </div>

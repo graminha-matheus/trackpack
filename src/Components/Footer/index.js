@@ -1,12 +1,12 @@
 import React from 'react';
-import footer from '../../Assets/logo_footer2.png'
+import footerimg from '../../Assets/logo_footer2.png'
 
 import './style.css'
 
 const Footer = () => {
     return (
         <div className="img-logo">
-            <img src={footer} alt="BCR"></img>
+            <img src={footerimg} alt="BCR"></img>
         </div>
     )
 }

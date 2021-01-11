@@ -3,7 +3,6 @@ div .form-container .search_bar {
     width: 230px;
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
 }
 
 div .form-container .search_bar input {
@@ -65,10 +64,10 @@ div input {
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     height: 100%;
     width: 100%;
-    padding: 10px;
+    padding: 3px;
     border: 1px solid #1179A0;
     border-radius: 15px 15px 15px 15px;
     font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -104,7 +103,7 @@ div .div-span {
 .btn {
     display: flex;
     justify-content: space-between;
-    margin-top: 8rem;
+    margin-top: 2rem;
 } 
 
 table { 
@@ -134,9 +133,13 @@ th {
     background: rgb(168, 190, 204); 
    }
 
+div .app {
+    margin-top: 0rem;
+}
+
 div .scroll {
-    height: 200px;
-    width: 240px;
+    height: 90px;
+    width: 230px;
     border: 1px solid #1179A0;
     overflow: hidden;
     overflow-y:auto;
@@ -150,14 +153,11 @@ table{
     
 }
 table td{
-
     padding: 0.3rem;
-
 }
 
 div img {
     width: 10rem;
     height: auto;
-    margin-top: 25px;
+    /* margin-top: 25px; */
 }
-
