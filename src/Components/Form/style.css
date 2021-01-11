@@ -65,7 +65,7 @@ div input {
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
-    font-size: 1rem;
+    font-size: 0.7rem;
     height: 100%;
     width: 100%;
     padding: 10px;
@@ -78,7 +78,8 @@ div input {
 div h4 {
     font: bolder;
     display: flex;
-    justify-content: center;
+    justify-content: left;
+    font-size: 0.7rem;
 }
 
 div button {
@@ -110,6 +111,7 @@ table {
     overflow-y: auto; 
     height: 100px;
     font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 0.7rem;
 }
     
 table th { 
@@ -124,7 +126,8 @@ table  {
 
 
 th,td {  
-    padding: 2px 2px 2px 2px;   
+    padding: 2px 2px 2px 2px; 
+    font-size: 0.6rem;  
    }
 
 th { 
@@ -133,7 +136,7 @@ th {
 
 div .scroll {
     height: 200px;
-    width: 320px;
+    width: 240px;
     border: 1px solid #1179A0;
     overflow: hidden;
     overflow-y:auto;
