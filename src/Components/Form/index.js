@@ -83,7 +83,7 @@ const [hasit, setHasLoaded] = useState(false);
                 <br />
                 {/* -- */}
 
-                <div className="return-container">
+                <div className = {hasit === true ? 'show_info' : 'dontshow_info'}>
 
                     <div>
                         
@@ -127,15 +127,6 @@ const [hasit, setHasLoaded] = useState(false);
                         <div className="scroll">
 
                         <table className={hasit === true ? 'show_info' : 'dontshow_info'}>
-                   
-                            
-                            <thead>
-                            <tr className="info" bgcolor="black">
-                                    <th>Histórico</th>
-                                    
-                                </tr>    
-                                </thead>
-
                         {hasit === true ? end.eventos.map(item => { 
                             {console.log(hasit)}
                                 
@@ -143,17 +134,16 @@ const [hasit, setHasLoaded] = useState(false);
 
                                 <tbody>
                                 <tr className="info1">
-                                    <td>{item.data} {item.hora} {item.local}<br /> 
-                                    {item.status} <br /> 
-                                    {item.subStatus[0]} <br /> {item.subStatus[1]}</td>
-                                    
+                                    <td>{item.data}, às {item.hora}, em {item.local}:<br /> 
+                                    {item.status}. <br /> 
+                                    {item.subStatus[1]}</td>
                                 </tr>
                                 </tbody>
 
                             )
 
                             }) : error }
-
+                            
                             </table>
                             </div>
 
@@ -165,7 +155,7 @@ const [hasit, setHasLoaded] = useState(false);
                                 onClick={handlerSubmit}
                                 alt="Nova Consulta"
                             > 
-                            <AiOutlineRedo size="60"></AiOutlineRedo>
+                            <AiOutlineRedo size="40"></AiOutlineRedo>
                             
                         </button>
                         
@@ -174,7 +164,7 @@ const [hasit, setHasLoaded] = useState(false);
                                 onClick={handlerSubmit}
                                 alt="Aplicar no Ticket"
                             > 
-                            <AiOutlinePlus size="60"></AiOutlinePlus>
+                            <AiOutlinePlus size="40"></AiOutlinePlus>
                             
                         </button>
                     </div>
