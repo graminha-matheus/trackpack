@@ -4,7 +4,7 @@ import {FaSearch} from 'react-icons/fa';
 import { render } from '@testing-library/react';
 import {AiOutlineRedo} from 'react-icons/ai';
 import {AiOutlinePlus} from 'react-icons/ai';
-import Logo from '../../Assets/logotp.png'
+import Logo from '../../Assets/tppt2.png'
 
 const Form = () => {
 const [end, setEnd] = useState([]);
@@ -72,7 +72,7 @@ const [hasit, setHasLoaded] = useState(false);
                         </button>
                     </form>
                 </div>
-
+                <br />
                 <div className="div-span">
                     <span className={error === false ? 'dontshow' : 'show'}>
                     Código de rastreio inválido. 
@@ -152,7 +152,7 @@ const [hasit, setHasLoaded] = useState(false);
                     <div className="btn">
                         <button className = {hasit === true ? 'show_info' : 'dontshow_info'}
                                 type="submit" 
-                                onClick={handlerSubmit}
+                                onClick={() => setHasLoaded(false)}
                                 alt="Nova Consulta"
                             > 
                             <AiOutlineRedo size="40"></AiOutlineRedo>
