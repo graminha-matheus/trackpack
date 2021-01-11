@@ -4,6 +4,7 @@ import {FaSearch} from 'react-icons/fa';
 import { render } from '@testing-library/react';
 import {AiOutlineRedo} from 'react-icons/ai';
 import {AiOutlinePlus} from 'react-icons/ai';
+import Logo from '../../Assets/logotp.png'
 
 const Form = () => {
 const [end, setEnd] = useState([]);
@@ -46,6 +47,11 @@ const [hasit, setHasLoaded] = useState(false);
     
         return (
             <div>
+
+                <div className = {hasit === false ? 'show_info' : 'dontshow_info'}>
+                <img src={Logo} alt="TrackPack - by BCR"></img>
+                </div>
+
                 <div className="form-container">
                     <form className="search_bar">
                         <input className = {hasit === false ? 'show_info' : 'dontshow_info'}
@@ -77,20 +83,6 @@ const [hasit, setHasLoaded] = useState(false);
                 <br />
                 {/* -- */}
 
-
-
-
-
-
-
-
-
-
-
-
-
-                
-                
                 <div className="return-container">
 
                     <div>
@@ -139,11 +131,7 @@ const [hasit, setHasLoaded] = useState(false);
                             
                             <thead>
                             <tr className="info" bgcolor="black">
-                                    <th>Data</th>
-                                    <th>Local</th>
-                                    <th>Hora</th>
-                                    <th>Status</th>
-                                    <th>Origem e Destino</th>
+                                    <th>Histórico</th>
                                     
                                 </tr>    
                                 </thead>
@@ -153,18 +141,14 @@ const [hasit, setHasLoaded] = useState(false);
                                 
                             return (
 
-                                
-
                                 <tbody>
                                 <tr className="info1">
-                                    <td>{item.data}</td>
-                                    <td>{item.local}</td>
-                                    <td>{item.hora}</td>
-                                    <td>{item.status}</td>
-                                    <td>{item.subStatus[0]} <br /> {item.subStatus[1]}</td>
+                                    <td>{item.data} {item.hora} {item.local}<br /> 
+                                    {item.status} <br /> 
+                                    {item.subStatus[0]} <br /> {item.subStatus[1]}</td>
+                                    
                                 </tr>
                                 </tbody>
-                               
 
                             )
 

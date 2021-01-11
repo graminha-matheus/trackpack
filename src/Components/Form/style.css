@@ -52,6 +52,8 @@ div .dontshow {
 
 div .show_info {
     margin: 0 auto;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
 }
 
 div .dontshow_info {
@@ -69,6 +71,8 @@ div input {
     padding: 10px;
     border: 1px solid #1179A0;
     border-radius: 15px 15px 15px 15px;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
 }
 
 div h4 {
@@ -92,14 +96,14 @@ div button:hover {
 .btn {
     display: flex;
     justify-content: space-between;
-    
-
-    
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 } 
 
 table { 
     overflow-y: auto; 
-    height: 100px; }
+    height: 100px;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
     
 table th { 
     position: sticky; 
@@ -139,22 +143,26 @@ th {
 div .scroll{
 
     height: 200px;
-    width: 660px;
-    border:solid 2px;
+    width: 320px;
     overflow: hidden;
     overflow-y:auto;
     position: absolute;
-  
-    
-
 }
 
 table{
     border-collapse:collapse;
-
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 0.8rem;
+    
 }
 table td{
 
-    padding: 20px;
+    padding: 0.3rem;
 
+}
+
+div img {
+    width: 10rem;
+    height: auto;
+    margin-top: 25px;
 }
