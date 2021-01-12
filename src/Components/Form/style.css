@@ -1,8 +1,10 @@
 div .form-container .search_bar { 
     display: flex;
-    width: 230px;
+    width: 260px;
     justify-content: center;
     align-items: center;
+
+    margin-bottom: 70px;
 }
 
 div .form-container .search_bar input {
@@ -29,18 +31,12 @@ div .search_bar button:hover {
     background-color: rgb(19, 150, 226);
 }
 
-div .search_bar input {
-    text-transform: uppercase;
-}
-
-::placeholder {
-    text-transform: lowercase;
-}
-
 div .show {
     color: red;
-    font-weight: bold;
-    margin: 0 auto;
+    position: absolute;
+
+    top: 230px;
+    left: 45px;
 }
 
 div .dontshow {

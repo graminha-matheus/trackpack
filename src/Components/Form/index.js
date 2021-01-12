@@ -1,11 +1,9 @@
 import React, {useState} from 'react';
 import './style.css';
 import {FaSearch} from 'react-icons/fa';
-import { render } from '@testing-library/react';
 import {AiOutlineRedo} from 'react-icons/ai';
 import {AiOutlinePlus} from 'react-icons/ai';
-import Logo from '../../Assets/tppt2.png';
-import footerimg from '../../Assets/logo_footer2.png';
+
 
 const Form = () => {
 const [end, setEnd] = useState([]);
@@ -44,26 +42,18 @@ const [hasit, setHasLoaded] = useState(false);
             })
     }
 
-    console.log(end)
-    
         return (
-            <div className="tes">
-
-                <div className = {hasit === false ? 'show_info' : 'dontshow_info'}>
-                <img src={Logo} alt="TrackPack - by BCR"></img>
-                </div>
+            <div>     
                 <br />
                 <div className="form-container">
                     <form className="search_bar">
                         
                         <input className = {hasit === false ? 'show_info' : 'dontshow_info'}
-                            type="text" 
-                            id="pesquisa" 
-                            placeholder="código de rastreio"
+                            type="text"  
+                            placeholder="Código de rastreio"
                             value = {search}
-                            onChange = {onChangeHandler}
-                            styles="text-transform:uppercase" 
-                            >   
+                            onChange = {onChangeHandler} 
+                            >
                         </input>
 
                         <button className = {hasit === false ? 'show_info' : 'dontshow_info'}
@@ -81,14 +71,9 @@ const [hasit, setHasLoaded] = useState(false);
                     </span>
                 </div>
 
-                {/* Renderizando dados no Front-End. */}
-                <br />
-                {/* -- */}
-
                 <div className = {hasit === true ? 'show_info' : 'dontshow_info'}>
 
                     <div>
-                        
                         <h4 className = {hasit === true ? 'show_info' : 'dontshow_info'}> 
                         Código de rastreio: 
                         </h4>
@@ -98,13 +83,9 @@ const [hasit, setHasLoaded] = useState(false);
                         className = {hasit === true ? 'show_info' : 'dontshow_info'} 
                         disabled
                         >
-
                         </input> 
                     </div>
-                    {/* -- */}
-                    <br />
-                    {/* -- */}
-                        
+                          
                     <div>
                         <h4 className = {hasit === true ? 'show_info' : 'dontshow_info'}>  
                         Status atual do pedido: 
@@ -116,9 +97,7 @@ const [hasit, setHasLoaded] = useState(false);
                         disabled
                         >
 
-                        </input>
-
-                        <br />  
+                        </input> 
 
                         <span className = {hasit === true ? 'show_info' : 'dontshow_info'}>
                             <h4>
@@ -128,29 +107,25 @@ const [hasit, setHasLoaded] = useState(false);
 
                         <div className="scroll">
 
-                        <table className={hasit === true ? 'show_info' : 'dontshow_info'}>
-                        {hasit === true ? end.eventos.map(item => { 
-                            {console.log(hasit)}
-                                
-                            return (
+                            <table className={hasit === true ? 'show_info' : 'dontshow_info'}>
+                                {hasit === true ? end.eventos.map(item => { 
+                                    
+                                        return (
+                                            <tbody>
+                                                <tr className="info1">
+                                                    <td>{item.data}, às {item.hora} <br /> Em {item.local}<br /> 
+                                                    {item.status}. <br /> 
+                                                    {item.subStatus[1]}</td>
+                                                </tr>
+                                            </tbody>
+                                        )
 
-                                <tbody>
-                                <tr className="info1">
-                                    <td>{item.data}, às {item.hora} <br /> Em {item.local}<br /> 
-                                    {item.status}. <br /> 
-                                    {item.subStatus[1]}</td>
-                                </tr>
-                                </tbody>
-
-                            )
-
-                            }) : error }
-                            
+                                }) : error }
                             </table>
-                            </div>
+                        </div>
 
                     </div>
-                    <br /> <br /> <br />
+
                     <div className="btn">
                         <button className = {hasit === true ? 'show_info' : 'dontshow_info'}
                                 type="submit" 
@@ -170,12 +145,7 @@ const [hasit, setHasLoaded] = useState(false);
                             
                         </button>
                     </div>
-
                 </div>
-
-                
-
-
             </div>
     )
     }
