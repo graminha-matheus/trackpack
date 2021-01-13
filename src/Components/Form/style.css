@@ -77,12 +77,18 @@ div h4 {
 
 div button {
     border-radius: 50%;
-    padding: 0.3rem;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #1179A0;
     color: white;
     border: transparent;
     transition: 0.3s;
     outline: none;
+
+    cursor: pointer;
 }
 
 div button:hover {
@@ -196,3 +202,12 @@ div .response-container .scroll {
     height: 150px;
 }
 
+div .response-container .scroll::-webkit-scrollbar {
+    width: 6px;
+    background-color: #1179A0;
+}
+
+div .response-container .scroll::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 6px;
+}

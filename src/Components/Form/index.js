@@ -2,7 +2,8 @@ import React, {useState} from 'react';
 import './style.css';
 import {FaSearch} from 'react-icons/fa';
 import {AiOutlineRedo} from 'react-icons/ai';
-import {AiOutlinePlus} from 'react-icons/ai';
+import {BsBoxArrowInUp} from 'react-icons/bs';
+import client from '../../utils/index';
 
 
 const Form = () => {
@@ -20,21 +21,14 @@ const [hasit, setHasLoaded] = useState(false);
 
     const handlerSubmit = async event => {
         event.preventDefault();
-            /* Puxa a API do codigo de rastreio */
             fetch(`https://api.linketrack.com/track/json?user=matheus.g.moreli@gmail.com&token=39fed9f9a76882a1a1cba109fd62dfaacdf426066b6b9166cad6f0ad00c9f52c&codigo=${search}`)
 
-            /* Passa os resultados para JSON */
             .then(trackResult => trackResult.json())
             
-            /* Joga os resultados para o setData*/
             .then(data => {
-
-                /* Define que o valor final vem de Data e que não houve erros. */
                 setEnd(data)
                 setHasLoaded(true)
                 setError(false)
-
-                console.log(data)
 
             }).catch(err => {
                 setError(true)
@@ -42,6 +36,19 @@ const [hasit, setHasLoaded] = useState(false);
             })
     }
 
+    const handlerData = () => {
+        const table = `
+        <table>
+            <tr>
+                <td>
+                    
+                <br />
+                    
+                </td>
+            </tr>
+        </table>`
+    }
+    
         return (
             <div>     
                 <br />
@@ -139,16 +146,16 @@ const [hasit, setHasLoaded] = useState(false);
                                     onClick={() => setHasLoaded(false)}
                                     alt="Nova Consulta"
                                 > 
-                                <AiOutlineRedo size="40"></AiOutlineRedo>
+                                <AiOutlineRedo size="35"></AiOutlineRedo>
                                 
                             </button>
                             
                             <button className = {hasit === true ? 'show_info' : 'dontshow_info'}
                                     type="submit" 
-                                    onClick={handlerSubmit}
+                                    onClick={handlerData}
                                     alt="Aplicar no Ticket"
                                 > 
-                                <AiOutlinePlus size="40"></AiOutlinePlus>
+                                <BsBoxArrowInUp size="30"></BsBoxArrowInUp>
                             </button>
                         </div>
                     </div>
