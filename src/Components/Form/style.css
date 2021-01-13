@@ -1,8 +1,10 @@
 div .form-container .search_bar { 
     display: flex;
-    width: 230px;
+    width: 260px;
     justify-content: center;
     align-items: center;
+
+    margin-bottom: 70px;
 }
 
 div .form-container .search_bar input {
@@ -29,18 +31,12 @@ div .search_bar button:hover {
     background-color: rgb(19, 150, 226);
 }
 
-div .search_bar input {
-    text-transform: uppercase;
-}
-
-::placeholder {
-    text-transform: lowercase;
-}
-
 div .show {
     color: red;
-    font-weight: bold;
-    margin: 0 auto;
+    position: absolute;
+
+    top: 230px;
+    left: 45px;
 }
 
 div .dontshow {
@@ -48,11 +44,9 @@ div .dontshow {
     display: none;
 }
 
-
 div .show_info {
     margin: 0 auto;
     font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
 }
 
 div .dontshow_info {
@@ -83,12 +77,18 @@ div h4 {
 
 div button {
     border-radius: 50%;
-    padding: 0.3rem;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #1179A0;
     color: white;
     border: transparent;
     transition: 0.3s;
     outline: none;
+
+    cursor: pointer;
 }
 
 div button:hover {
@@ -103,7 +103,9 @@ div .div-span {
 .btn {
     display: flex;
     justify-content: space-between;
-    margin-top: 2rem;
+    position: relative;
+
+    bottom: -180px;
 } 
 
 table { 
@@ -159,5 +161,53 @@ table td{
 div img {
     width: 10rem;
     height: auto;
-    /* margin-top: 25px; */
+}
+
+div .response-container {
+    width: 320px;
+    height: 370px;
+
+    position: absolute;
+    background-color: #fff;
+    top: 10px;
+    left: 0;
+}
+
+div .response-container .code-input {
+    width: 250px;
+    margin: 0 auto;
+}
+
+div .response-container .code-input h4 {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+
+    margin-bottom: 5px;
+}
+
+div .response-container .code-input input {
+    height: 25px;
+    font-size: 15px;
+    padding: 10px;
+
+    margin-bottom: 10px;
+}
+
+div .response-container .scroll {
+    background-color: white;
+
+    width: 100%;
+    left: 0;
+    height: 150px;
+}
+
+div .response-container .scroll::-webkit-scrollbar {
+    width: 6px;
+    background-color: #1179A0;
+}
+
+div .response-container .scroll::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 6px;
 }

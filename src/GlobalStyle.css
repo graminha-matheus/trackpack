@@ -5,10 +5,11 @@
 }
 
 .app {
-    width: 250px;
-    height: 360px;
+    width: 320px;
+    height: 380px;
     position: absolute;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 }
